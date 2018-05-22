@@ -1,0 +1,67 @@
+Below are the main technologies used in the Nimbus framework:
+	Docker	
+	Spring boot	
+	Mongo db		
+	Java 1.8	
+	Drools		
+	Jackson	
+	Angular 5 (node and npm)
+	Karma - Which is used for UI purpose i.e., used to write Spec files for Anugular components
+	Spring cloud
+	Maven - which is used for build and version control. 
+	Spring MVC
+	
+I choose below topic:
+a.    Architecture of the Nimbus framework, with a specific focus on any two of the technologies used.
+
+Two technologies are Spring Boot and Angular 5.	
+
+Spring boot : 
+Spring Boot provides a pre-configured set of frameworks. 
+	Step1:  In order to start spring boot application we need to have below entires in pom.xml
+            <parent>
+             	<groupId>org.springframework.boot</groupId>
+             	<artifactId>spring-boot-starter-parent</artifactId>
+             	<version>${spring-boot.version}</version>
+            </parent>
+			<dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot.version}</version>
+        	 </dependency>
+                                
+    Step2:  we need to create a standalone java class and declare @SpringBootApplication annotation at class level and within the main method we need to call the static method, which is 
+                                 SpringApplication.run(.class, args);
+	
+Angular5  :
+   Prerequisite: Download the latest version of Node.js from https://nodejs.org . Once installation is successful follow the below steps to create a Angular5 Application. 
+   Step 1: Create and configure the project 
+                As a first Step for developing Angular 5 Applications, we need to configure Project Structure, configuration files and need to install npm packages 
+                Create a project folder in your local drive.
+                Ex: create a new folder with name “angular5_demo” 
+                                •             Package.json - Will contain the desired packages that our application needs. These packages are installed and maintained with npm (Node Package Manager). 
+                                •             typings.json identifies TypeScript definition files. 
+                                •             tsconfig.json - TypeScript compiler configuration file. 
+                                •             systemjs.config.js - the SystemJS configuration file 
+   Step 2: Set environment variables and need to run below commands
+           npm config set registry="http://registry.npmjs.org/" 
+           npm config set strict-ssl false 
+           npm config set proxy  
+           npm config set https-proxy 
+           npm config set ca ""
+           Once all the above configurations are set, then Install Npm Modules from Command Prompt by navigating to Project folder using command prompt 
+           npm install 
+    Step 3: After creating a project, in Index.html we have a customized html tag like: <app-root>
+    Step 4: This will read main.ts 
+            Main.ts is an entry point to launch our Angular application. bootstarpping app module by using 
+            To launch the application there are two essential imports i.e. 
+               •             Angular's browser bootstrap function. 
+               •             Root component of the application. 
+			After importing, the bootstrap is called by passing the root component type i.e. AppComponent.
+			import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+            platformBrowserDynamic().bootstrapModule(AppModule);
+    Step 5: app.module.ts will be invoked 
+         @NgModule is a declaration where we declare all the common components used across application from here we will bootstarp appcomponent.ts
+         bootstrap: [ AppComponent ]
+    Step 6: app.component.ts will be invoked -  selector: 'app-root', - which we declared in index.html and it will load the application 
+
